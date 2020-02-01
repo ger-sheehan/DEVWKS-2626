@@ -1,5 +1,5 @@
-## DEVWKS-2626
-# DevNet Workshop 2624
+# DEVWKS-2626
+## DevNet Workshop 2624
 # Instructions
 
 1. Install vagrant, virtualbox and Ansible 2.9 if not already installed. 
