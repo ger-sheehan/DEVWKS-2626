@@ -1,0 +1,10 @@
+---
+- name: Create VLAN
+  hosts: nxos_vteps
+  gather_facts: no
+
+  tasks:
+    - name: Create VLAN
+      nxos_vlan:
+        vlan_id: 20
+        admin_state: up

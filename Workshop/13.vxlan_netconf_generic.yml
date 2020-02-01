@@ -1,0 +1,19 @@
+---
+- name: VXLAN NETCONF
+  hosts: nxos_vteps
+  gather_facts: no
+
+  tasks:
+    - name: Generate the YANG payload from the template
+      template:
+        src: 13.vxlan_yang.j2
+        dest: 13.vxlan_yang_payload.xml
+      vars:
+        vlan_id: STUDENT_ID
+        vxlan_id: 200STUDENT_ID
+        vlan_name: vlan-STUDENT_ID
+
+    - name: Send the YANG payload to the switch via NETCONF
+      netconf_config:
+        datastore: running
+        content: "{{ lookup('file', './13.vxlan_yang_payload.xml') }}"

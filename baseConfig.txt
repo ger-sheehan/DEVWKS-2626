@@ -1,0 +1,10 @@
+feature nxapi
+feature bash-shell
+feature ospf
+feature bgp
+feature interface-vlan
+feature vn-segment-vlan-based
+feature nv overlay
+
+interface nve1
+  host-reachability protocol bgp

@@ -1,0 +1,10 @@
+---
+- name: VXLAN NETCONF
+  hosts: nxos_vteps
+  gather_facts: no
+
+  tasks:
+    - name: VXLAN
+      netconf_config:
+        datastore: running
+        content: "{{ lookup('file', './12.vxlan_yang.xml') }}"

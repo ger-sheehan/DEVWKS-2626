@@ -1,0 +1,12 @@
+---
+- name: Prepare N9Kv2
+  hosts: n9kv2
+  user: vagrant
+  #sudo: yes
+  become: false
+  gather_facts: false 
+
+  tasks:
+  - name: N9Kv2 Configuration
+    nxos_system:
+      hostname: N9Kv2
